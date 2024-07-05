@@ -1,0 +1,9 @@
+---
+# vars file for estructura
+NOMBRE: "Tomas"
+APELLIDO: "Blanco"
+DIVISION: "116"
+ip: "{{ ansible_facts['default_ipv4']['address'] }}"
+DISTRIBUCION: "{{ ansible_facts['distribution'] }}"
+CORES: "{{ ansible_facts['processor_cores'] }}"
+

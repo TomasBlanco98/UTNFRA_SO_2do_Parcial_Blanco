@@ -1,0 +1,28 @@
+---
+# tasks file for estructura
+- name: "Crear directorios en /tmp/2do_parcial/"
+  file:
+    path: "/tmp/2do_parcial/{{ item }}"
+    state: directory
+    mode: '0775'
+    recurse: yes
+  with_items:
+    - "alumno"
+    - "equipo"
+
+- debug:
+    msg: "Dentro prueba_1"
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts
+
+
+- name: "Agrego archivo desde template"
+  template:
+    src: template_01.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+- name: "Agrego archivo desde template"
+  template:
+    src: template_02.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+
